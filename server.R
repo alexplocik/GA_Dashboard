@@ -1,24 +1,10 @@
+#### google analytics options ####
+options("googleAuthR.scopes.selected" = "https://www.googleapis.com/auth/analytics.readonly")
+
 shinyServer(function(input, output, session){
   
-  #   #### twitter authentication ####
-  #   token <- read.table("twitter_oauth.txt")$V1
-  #   setup_twitter_oauth(token[1], token[2], token[3], token[4])
-  #   user <- getUser("VeritasGenetics")
-  #   user$toDataFrame()
-  
   #### google analytics local authentication ####
-  options(shiny.port = 1221)
-  #options(googleAuthR.webapp.port = 1221)
-  options("googleAuthR.scopes.selected" = "https://www.googleapis.com/auth/analytics.readonly")
   gar_auth(new_user = T) # creates an .httr-oauth file for access
-  
-  #### google analytics multi-user access ####
-  #   options("googleAuthR.scopes.selected" = "https://www.googleapis.com/auth/analytics")
-  #   options(googleAnalyticsR.webapp.client_id = "")
-  #   options(googleAnalyticsR.webapp.client_secret = "")
-  #   access_token <- shiny::callModule(googleAuth, id = "loginButton", approval_prompt = "force") # for multi-user; not implemented
-  #   access_token  <- reactiveAccessToken(session)
-  #   output$loginButton <- renderLogin(session, access_token(), revoke=TRUE)
   
   #### dashboard table ####
   GAtable <- reactive({

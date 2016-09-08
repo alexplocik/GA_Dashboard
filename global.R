@@ -40,6 +40,12 @@ required_package("plotly")
 #     input$dateRange1 <- c(start = "2016-06-01", end = "2016-06-30")
 #     input$dateRange2 <- c(start = "2016-07-01", end = "2016-07-31")
 #     input$dateRange3 <- c(start = "2016-08-01", end = "2016-08-14")
+# 
+# google_analytics_4(102857018,
+#                    c("2016-07-01","2016-07-31"),
+#                    dimensions=c('userType'),
+#                    metrics = c('sessions')
+# )
 
 # segment
 # se1 <- segment_element(name = "city", operator = "EXACT", type = "DIMENSION", not = T, expressions = "Danvers", scope = "USER")
@@ -65,7 +71,7 @@ required_package("plotly")
 # # 
 # # segment test
 # google_analytics_4(ga_id,
-#                    c("2016-07-01","2016-07-31"), 
+#                    c("2016-07-01","2016-07-31"),
 #                    dimensions=c('userType', 'segment'),
 #                    segments = list(segment_location1),
 #                    metrics = c('sessions')
