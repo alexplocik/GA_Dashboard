@@ -7,6 +7,7 @@ shinyServer(function(input, output, session){
   #   user$toDataFrame()
   
   #### google analytics local authentication ####
+  options(googleAuthR.webapp.port = 1221)
   options("googleAuthR.scopes.selected" = "https://www.googleapis.com/auth/analytics.readonly")
   gar_auth(new_user = T) # creates an .httr-oauth file for access
   
